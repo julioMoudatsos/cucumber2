@@ -12,7 +12,7 @@ jobs:
     docker:
       # specify the version you desire here
       - image: cimg/openjdk:15.0.1
-      - image: swaggerapi/petstore3:unstable
+      
 
     working_directory: ~/repo
 
@@ -43,7 +43,12 @@ jobs:
           paths:
             - gradle
   sanityTests:
-    <<: *containerSetup
+    docker:
+      - image: cimg/openjdk:15.0.1
+      - image: swaggerapi/petstore3:unstable
+      environment:
+        ENV: circle
+      working_directory: ~/repo
     steps:
       - checkout
       - attach_workspace:

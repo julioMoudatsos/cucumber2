@@ -88,4 +88,4 @@ workflows:
             - build
       - regressionTests:
           requires:
-            - sanityTests
+            - build

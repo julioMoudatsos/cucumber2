@@ -24,12 +24,13 @@ public class Config {
 
     @Before
     public void setup(){
+        String path = "/api";
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 
         ServerConfig properties = ManagerConfig.getConfiguracoes();
 
         RestAssured.baseURI = String.format("%s:%d", properties.urlBase(), properties.port());
-        RestAssured.basePath = "/api";
+        RestAssured.basePath = path;
         RestAssured.requestSpecification = new RequestSpecBuilder().
                 addHeader("Authorization",getToken()).
                 setContentType(ContentType.JSON).

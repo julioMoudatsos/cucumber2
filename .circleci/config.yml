@@ -46,11 +46,13 @@ jobs:
       - image: cimg/openjdk:15.0.1
     steps:
       - run: echo "Unit Test"
+
   frontTests:
      docker:
        - image: cimg/openjdk:15.0.1
     steps:
       - run: echo "Front Test"
+
   sanityTests:
     <<: *containerSetup
     steps:
@@ -94,10 +96,10 @@ workflows:
     jobs:
       - build
       - unitTests:
-          requieres:
+          requires:
             - build
       - frontTests:
-          requieres:
+          requires:
             - build
       - sanityTests:
           requires:

@@ -29,7 +29,7 @@ public class Config {
         ServerConfig properties = ManagerConfig.getConfiguracoes();
 
         RestAssured.baseURI = String.format("%s:%d", properties.urlBase(), properties.port());
-        RestAssured.basePath = properties.urlPath();
+        RestAssured.basePath = "/api";
         RestAssured.requestSpecification = new RequestSpecBuilder().
                 addHeader("Authorization",getToken()).
                 setContentType(ContentType.JSON).

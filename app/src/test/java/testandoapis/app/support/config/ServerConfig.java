@@ -7,10 +7,10 @@ import javax.security.auth.login.Configuration;
 @Config.Sources({"classpath:properties/${ENV}.properties"})
 public interface ServerConfig extends Config {
 
-    @Key("api.urlBase")
+    @Key("api.base.uri")
     String urlBase();
 
-    @Key("api.path")
+    @Key("api.base.path")
     String urlPath();
 
     int port();

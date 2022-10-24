@@ -33,7 +33,7 @@ Funcionalidade: Testar lista de pets
       Dado que eu possua animais available
       Quando pesquiso por todos os animais available
       Entao recebo a lista com 7 animais available
-      E 3 animais possuem o nome Lion
+      E 4 animais possuem o nome Lion
 
 
 
